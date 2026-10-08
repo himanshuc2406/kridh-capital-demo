@@ -1,50 +1,37 @@
-# Kridh Capital — Interactive Public Demo
+# Kridh Capital — Trading Intelligence Demo
 
-[**Open the live demo →**](https://himanshuc2406.github.io/kridh-capital-demo/)
+[Open interactive demo](https://himanshuc2406.github.io/kridh-capital-demo/)
 
-A standalone portfolio walkthrough by **Himanshu Chauhan**. It demonstrates a research → portfolio review → simulated paper buy → journal workflow, using independently written browser UI code and fictional fixture data.
+An independently written public product preview, guided by the original Kridh Capital README and interface. Kridh brings trading, automatic journaling and evidence from the trader’s own frozen data into one workspace. The original application and repositories remain private and unchanged.
 
-**The original Kridh Capital backend and strategy remain private.** This repository does not copy or connect to either private trading repository.
+![Home](docs/screenshots/overview.jpg)
 
-## Walkthrough
+## Explore the workflow
+1. Home: black/green portfolio hero, market strip, qualified signals, paper wallets and holdings.
+2. Scanner: recomputed seven-check demo signals, synthetic chart, transparent score explanation and similar closed trades (withheld below ten samples).
+3. Buy: choose quantity, SL, target and journal note; review rupee risk. A local paper entry freezes score, RSI, regime, source and setup.
+4. Advance market: generated prices change, evidence captures taken/not-taken instruments, MAE/MFE update. Optional auto simulation opens an eligible synthetic equity entry.
+5. Holdings: partial/full sell at a synthetic quote; cash, realised P&L, illustrative fees and exit context update.
+6. Journal: editable notes/mood, source filters, CSV export, cumulative net curve, frozen entry and exit review.
+7. Analytics: computed win rate, profit factor, expectancy, setup and discipline splits from this browser’s journal.
+8. Options: separate ₹10 lakh wallet, synthetic bid/ask, 25-unit lot validation and separate report/journal.
 
-![Kridh Capital public demo](docs/screenshots/overview.jpg)
+## Faithful presentation versus simulation
+| Area | Public preview |
+|---|---|
+| Product identity | Trading intelligence, trading + journal + own-data evidence |
+| Navigation / design | Black/green, 232px sidebar, mobile bottom navigation, Equity/Options switch |
+| Entry-to-exit workflow | Local paper buys, partial/full exits, frozen entry context, notes and mood |
+| Scanner / similarity | Independently designed demo checks and simple journal score buckets; not production strategy |
+| Price data | Generated synthetic series; no market feed |
+| ML / news / broker | Not connected or published |
+| Options | Simplified synthetic single-contract research and fills, not full production chain |
+| Rule Validator | Planned original feature; not represented as validated or shipped |
+| Private IP | No original backend, model, prompts, schemas, secrets or real trading records |
 
-![Research scanner with fictional instruments](docs/screenshots/scanner.jpg)
+Demo figures do not represent actual performance. Charges and execution are simplified. This public preview covers the core workflow, not every production feature. State is stored only under `kridh_public_demo_v2` in browser localStorage. Reset clears only the demo state.
 
-## What works
+## Run
+Serve `docs/` with any static web server. No dependencies or API keys. GitHub Pages publishes `main:/docs`.
 
-- Overview with computed account value, cash, unrealised P/L and equity allocation.
-- Research scanner with instrument search, sector/status filtering and fixed illustrative scores.
-- Holdings with weighted average cost, portfolio weight and concentration metrics.
-- Locally simulated paper buys with quantity and cash validation.
-- Session-only journal and holdings/journal CSV exports.
-- Three synthetic chart periods, modal walkthrough and responsive screens.
-
-## Data and confidentiality
-
-All instruments, prices, trades, scores, chart points and performance values are synthetic. They are not live prices, real Kridh returns or predictions. No broker, account credentials, actual journals, private signal formulas or original backend are present. Fees and slippage are not modelled. Refreshing resets the simulation.
-
-The public interface is an independently designed demonstration, not an exact replica of the private product. The demo source is public; the original source remains private.
-
-## Run locally
-
-```sh
-python -m http.server 5110 --directory docs
-```
-
-Open `http://127.0.0.1:5110`. No packages, build process or API credentials are required. GitHub Pages serves `docs/` on the `main` branch. The optional Google Fonts stylesheet has system-font fallbacks.
-
-## Architecture
-
-`Fictional fixture data → browser state → computed metrics and SVG charts → synthetic CSV exports`
-
-Only HTML, CSS and vanilla JavaScript are used. There is no private-code dependency or trading endpoint.
-
-## Validation
-
-The published demo was inspected in Chrome. Instrument search narrowed the scanner correctly. A paper buy exceeding available cash was rejected; buying 10 ASTR units updated quantity from 120 to 130 and preserved the account value. The journal recorded the action and reset restored the initial cash and positions. JavaScript syntax passed `node --check`; no browser console errors were observed during these checks. Screenshots above are from the published interface. These checks do not validate a trading strategy.
-
-## Author
-
-[Portfolio](https://himanshuc2406.github.io/himanshuc2406/) · [LinkedIn](https://www.linkedin.com/in/himansh-chauhan266/) · [Email](mailto:himanshuc2406@gmail.com)
+Built by Himanshu Chauhan. [Portfolio](https://himanshuc2406.github.io/himanshuc2406/)
